@@ -7,11 +7,6 @@ on:
       version:
         description: "バージョン（例：1.2.3）"
         required: true
-      force:
-        description: "既存のタグがある場合に上書きする"
-        required: false
-        type: boolean
-        default: false
 
 defaults:
   run:
@@ -66,15 +61,9 @@ jobs:
       - name: "タグ打ち"
         run: |
           TAG_NAME="v${{ steps.semver.outputs.version }}"
-          if [ "${{ inputs.force }}" = "true" ]; then
-            echo "タグを強制的に作成：$TAG_NAME"
-            git tag -f "$TAG_NAME"
-            git push origin "$TAG_NAME" --force
-          else
-            echo "タグを作成：$TAG_NAME"
-            git tag "$TAG_NAME"
-            git push origin "$TAG_NAME"
-          fi
+          echo "タグを作成：$TAG_NAME"
+          git tag -f "$TAG_NAME"
+          git push origin- f "$TAG_NAME"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
