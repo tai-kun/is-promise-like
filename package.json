@@ -16,7 +16,7 @@
     "package.json",
     "LICENSE"
   ],
-  "homepage": "https://github.com/tai-kun/@tai-kun/is-promise-like",
+  "homepage": "https://github.com/tai-kun/is-promise-like",
   "repository": {
     "url": "https://github.com/tai-kun/is-promise-like"
   },
