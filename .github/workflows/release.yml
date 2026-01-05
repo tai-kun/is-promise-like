@@ -33,7 +33,7 @@ jobs:
 
       - name: "バージョン確認"
         run: |
-          if npm view "@tai-kun/is-promise-like@${{ steps.semver.outpus.version }}" version >/dev/null 2>&1; then
+          if npm view "@tai-kun/is-promise-like@${{ steps.semver.outputs.version }}" version >/dev/null 2>&1; then
             echo "Error: そのバージョンはすでに存在しています。" >&2
             exit 1
           fi
