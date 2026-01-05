@@ -1,5 +1,5 @@
 import { describe, test } from "vitest";
-import isPromiseLike from "../src/@tai-kun/is-promise-like.js";
+import isPromiseLike from "../src/is-promise-like.js";
 
 describe("Promise のような振る舞いを持つオブジェクト（Thenable）の場合", () => {
   test("then メソッドを持つオブジェクトを渡したとき、true になる", ({ expect }) => {
