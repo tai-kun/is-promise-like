@@ -18,7 +18,7 @@
   ],
   "homepage": "https://github.com/tai-kun/@tai-kun/is-promise-like",
   "repository": {
-    "url": "git+https://github.com/tai-kun/@tai-kun/is-promise-like.git"
+    "url": "https://github.com/tai-kun/is-promise-like"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
