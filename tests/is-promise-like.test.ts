@@ -98,18 +98,16 @@ describe("Thenable ではない値の場合", () => {
     expect(result).toBe(false);
   });
 
-  test("proxy のゲッターがエラーを投げたとき、false になる", ({ expect }) => {
+  test("proxy のゲッターがエラーを投げたとき、エラーを投げる", ({ expect }) => {
     // Arrange
+    const error = new Error();
     const value = new Proxy({ then() {} }, {
       get() {
-        throw new Error();
+        throw error;
       },
     });
 
-    // Act
-    const result = isPromiseLike(value);
-
-    // Assert
-    expect(result).toBe(false);
+    // Act & Assert
+    expect(() => isPromiseLike(value)).toThrow(error);
   });
 });

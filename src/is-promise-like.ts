@@ -16,15 +16,11 @@ function isPromiseLike(value: unknown): value is PromiseLike<unknown>;
 function isPromiseLike<T>(value: unknown): value is PromiseLike<T>;
 
 function isPromiseLike(value: unknown): boolean {
-  try {
-    return (
-      value != null
-      && (typeof value === "object" || typeof value === "function")
-      && typeof (value as Record<keyof any, unknown>)["then"] === "function"
-    );
-  } catch {
-    return false;
-  }
+  return (
+    value != null
+    && (typeof value === "object" || typeof value === "function")
+    && typeof (value as Record<keyof any, unknown>)["then"] === "function"
+  );
 }
 
 export default isPromiseLike;
